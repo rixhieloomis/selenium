@@ -6,7 +6,7 @@ import random
 import os
 
 
-os.environ["CHROME_EXECUTABLE"] = "R:\chromedriver_win32\chromedriver.exe"
+os.environ["CHROME_EXECUTABLE"] = <path to executable>
 CHROME_EXECUTABLE = os.environ.get('CHROME_EXECUTABLE')
 
 chrome_options = Options()
