@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 import random
 import os
 
+
+os.environ["CHROME_EXECUTABLE"] = "R:\chromedriver_win32\chromedriver.exe"
 CHROME_EXECUTABLE = os.environ.get('CHROME_EXECUTABLE')
 
 chrome_options = Options()
@@ -34,6 +36,14 @@ def playvideo():
     else:
         print("No free videos to watch")
 
+def heroanddescription():
+    starcast = browser.find_element(By.CSS_SELECTOR, "span.title-data-info-item-list")
+    star = starcast.text.split(",");
+    print(f"The Star-cast of the movie is {star[0]}");
+
+    description = browser.find_element(By.CSS_SELECTOR, "div.title-info-synopsis")
+    print(f"The description follows '{description.text}'");
 
 randomseriespicker()
+heroanddescription()
 playvideo()
